@@ -1,4 +1,4 @@
-package programming.study.traffictestproject.dto;
+package programming.study.traffictestproject.dto.post.request;
 
 public class RequestCreatPostDtoNotRecord {
 

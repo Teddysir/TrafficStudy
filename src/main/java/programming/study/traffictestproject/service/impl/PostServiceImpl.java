@@ -2,10 +2,14 @@ package programming.study.traffictestproject.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import programming.study.traffictestproject.dto.RequestCreatePostDto;
+import programming.study.traffictestproject.dto.post.request.RequestCreatePostDto;
+import programming.study.traffictestproject.dto.post.response.ResponsePostDto;
+import programming.study.traffictestproject.dto.post.response.ResponsePostListDto;
 import programming.study.traffictestproject.entity.PostEntity;
 import programming.study.traffictestproject.repository.PostRepository;
 import programming.study.traffictestproject.service.Interface.PostService;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @Service
@@ -22,6 +26,25 @@ public class PostServiceImpl implements PostService {
                 .build();
 
         postRepository.save(post);
+
+    }
+
+    @Override
+    public ResponsePostListDto getPost_1() {
+
+        List<PostEntity> postEntities = postRepository.findAll();
+
+        List<ResponsePostDto> postDtoList = postEntities.stream()
+                .map(post -> ResponsePostDto.builder()
+                        .id(post.getId())
+                        .title(post.getTitle())
+                        .content(post.getContent())
+                        .build())
+                .toList();
+
+        return ResponsePostListDto.builder()
+                .posts(postDtoList)
+                .build();
 
     }
 

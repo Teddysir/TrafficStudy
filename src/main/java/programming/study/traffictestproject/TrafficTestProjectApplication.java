@@ -2,8 +2,8 @@ package programming.study.traffictestproject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import programming.study.traffictestproject.dto.RequestCreatPostDtoNotRecord;
-import programming.study.traffictestproject.dto.RequestCreatePostDto;
+import programming.study.traffictestproject.dto.post.request.RequestCreatPostDtoNotRecord;
+import programming.study.traffictestproject.dto.post.request.RequestCreatePostDto;
 
 @SpringBootApplication
 public class TrafficTestProjectApplication {
