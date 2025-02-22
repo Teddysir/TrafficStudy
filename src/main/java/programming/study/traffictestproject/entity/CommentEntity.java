@@ -6,7 +6,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -14,28 +13,23 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class PostEntity {
+public class CommentEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String title;
-
-    @Column(nullable = false)
     private String content;
 
     // Mapping Entity
 
-    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
-    private List<CommentEntity> comments = new ArrayList<>();
-
     @ManyToOne()
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id", unique = true, nullable = false)
     private UserEntity user;
 
-
-
+    @ManyToOne()
+    @JoinColumn(name = "post_id", unique = true, nullable = false)
+    private PostEntity post;
 
 }
