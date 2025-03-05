@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class PostEntity {
+public class PostEntity { // 엔티티는? -> 객체다! 게시물 어떻게? 연결을 해놨기때문이다! -> 어려워 설정.
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

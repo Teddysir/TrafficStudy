@@ -20,12 +20,14 @@ public class PostServiceImpl implements PostService {
     @Override
     public void createPost_1(RequestCreatePostDto dto) {
 
-        PostEntity post = PostEntity.builder()
+        PostEntity post = PostEntity.builder() // 함수형
                 .title(dto.title())
                 .content(dto.content())
                 .build();
 
-        postRepository.save(post);
+        postRepository.save(post); // -> repository intellij < - > database 다리?
+
+//        PostEntity newPost = new PostEntity(3, "test Title", "testContent");
 
     }
 
