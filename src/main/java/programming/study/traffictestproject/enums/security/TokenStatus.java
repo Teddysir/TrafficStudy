@@ -1,4 +1,4 @@
-package programming.study.traffictestproject.Enums.security;
+package programming.study.traffictestproject.enums.security;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
