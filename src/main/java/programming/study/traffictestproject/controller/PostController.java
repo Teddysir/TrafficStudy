@@ -34,5 +34,6 @@ public class PostController {
     // TODO : 기존에 많이 생각 안하고 썻던 N+1 현상을 개선하기 - 1
     // TODO : 핫 게시물, RT 사용시 캐싱 처리를 통한 성능 개선 - 2
     // TODO : Put / Delete 요청 한개씩 할경우 몇개부터 Put 요청이 유의미 할까? - 3
+    // TODO : GraphQL을 활용한 API 구현?
 
 }
