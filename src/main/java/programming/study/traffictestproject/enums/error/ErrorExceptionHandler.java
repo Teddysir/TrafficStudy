@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import programming.study.traffictestproject.security.error.*;
+import programming.study.traffictestproject.exception.*;
 
 @RequiredArgsConstructor
 @RestControllerAdvice
