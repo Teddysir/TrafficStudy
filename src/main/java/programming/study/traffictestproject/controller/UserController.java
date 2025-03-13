@@ -1,5 +1,8 @@
 package programming.study.traffictestproject.controller;
 
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +20,10 @@ public class UserController {
 
     private final UserService userService;
 
+//    @ApiResponses(value = {
+//            @ApiResponse(responseCode = "200", description = "회원가입 성공 - 어노테이션에서 잡힙",content = @Content(mediaType = "application/json")),
+//            @ApiResponse(responseCode = "401", description = "회원가입 실패 - 어노테이션에서 잡힘",content = @Content(mediaType = "application/json"))
+//    })  -> 이런식으로 컨트롤러에서도 에러 처리 가능하다. 따로 에러 받는 클래스를 만들어줘야함 setResponse Method 대체메서드 필요
     @PostMapping("/signup")
     public ResponseEntity<String> signUp(HttpServletResponse response, @RequestBody RequestSignUpDto dto) {
         userService.signUp(response, dto);
