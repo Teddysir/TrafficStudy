@@ -1,4 +1,4 @@
-package programming.study.traffictestproject.security.error;
+package programming.study.traffictestproject.exception;
 
 import programming.study.traffictestproject.enums.error.ErrorCode;
 
